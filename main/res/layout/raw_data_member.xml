@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="member" type="com.example.my.entity.Member"/>
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:orientation="vertical"
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="5dp"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="#ffffff">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id="@+id/cb_member_select"
+                android:visibility="gone"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:text="@{member.name}"
+                android:layout_height="25dp"
+                android:layout_toEndOf="@+id/cb_member_select"
+                android:layout_toRightOf="@+id/cb_member_select" />
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_toRightOf="@+id/cb_member_select"
+                android:layout_below="@+id/tv_name"
+                android:text="@{member.email}"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_toEndOf="@+id/cb_member_select" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
